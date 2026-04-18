@@ -25,10 +25,6 @@
         <p>{{ .Site.Params.location }}</p>
       </div>
       <div class="contact-item">
-        <p class="contact-label">Phone / WhatsApp</p>
-        <p><a href="tel:{{ .Site.Params.phone | replaceRE "[^+0-9]" "" }}">{{ .Site.Params.phone }}</a></p>
-      </div>
-      <div class="contact-item">
         <p class="contact-label">CV</p>
         <p><a href="{{ .Site.Params.cvFile }}" download>Download PDF →</a></p>
       </div>
