@@ -11,16 +11,20 @@
 
     <div class="skills-grid" style="margin-top: var(--s-6);">
       {{ partial "skill-group.html" (dict
+        "title" "Cloud Platforms"
+        "items" (slice "AWS" "Microsoft Azure" "Azure DevOps" "Google Cloud Platform" "OpenStack" "Proxmox")
+      ) }}
+      {{ partial "skill-group.html" (dict
+        "title" "Containers & Orchestration"
+        "items" (slice "Docker" "Kubernetes" "K3s" "K3s HA cluster" "RKE2" "Amazon EKS" "Amazon ECR" "Harbor" "Istio" "Container security" "Image signing" "Vulnerability scanning")
+      ) }}
+      {{ partial "skill-group.html" (dict
         "title" "Infrastructure & IaC"
         "items" (slice "Ansible" "Terraform" "GitOps" "IaC patterns")
       ) }}
       {{ partial "skill-group.html" (dict
-        "title" "Containers & Orchestration"
-        "items" (slice "Docker" "Kubernetes" "Container security" "Image signing" "Vulnerability scanning")
-      ) }}
-      {{ partial "skill-group.html" (dict
-        "title" "Cloud Platforms"
-        "items" (slice "Microsoft Azure" "Azure DevOps" "Google Cloud Platform" "OpenStack")
+        "title" "Observability"
+        "items" (slice "Grafana" "Prometheus" "VictoriaMetrics" "Loki" "Tempo" "Datadog" "Log aggregation" "Network infrastructure monitoring" "Alerting")
       ) }}
       {{ partial "skill-group.html" (dict
         "title" "Security"
@@ -28,19 +32,19 @@
       ) }}
       {{ partial "skill-group.html" (dict
         "title" "Automation & SRE"
-        "items" (slice "CI/CD" "PowerShell" "Shell scripting" "Site Reliability Engineering")
+        "items" (slice "CI/CD" "PowerShell" "Bash scripting" "Shell scripting" "Site Reliability Engineering")
       ) }}
       {{ partial "skill-group.html" (dict
-        "title" "Observability"
-        "items" (slice "Grafana" "Log aggregation" "Monitoring" "Alerting")
+        "title" "Databases"
+        "items" (slice "PostgreSQL" "MySQL" "MongoDB" "MSSQL")
       ) }}
       {{ partial "skill-group.html" (dict
-        "title" "OS / Web / DB"
-        "items" (slice "Ubuntu / Linux administration" "Nginx" "PostgreSQL")
+        "title" "Operating Systems"
+        "items" (slice "Ubuntu" "Debian" "CentOS" "Rocky Linux" "Kali Linux" "Windows Server")
       ) }}
       {{ partial "skill-group.html" (dict
-        "title" "Web stack (early career)"
-        "items" (slice "Vue.js" "Laravel" "PHP")
+        "title" "Web stack"
+        "items" (slice "Nginx" "Vue.js" "Laravel" "PHP")
       ) }}
     </div>
   </div>
