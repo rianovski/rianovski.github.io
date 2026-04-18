@@ -1,0 +1,42 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <header class="section-head">
+      <p class="section-eyebrow">Contact</p>
+      <h1 class="section-title">Let's talk</h1>
+      <p class="text-muted">Open to DevSecOps, SRE, and platform engineering conversations. Remote-friendly for teams in APAC / global time zones.</p>
+    </header>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <p class="contact-label">Email</p>
+        <p><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
+      </div>
+      <div class="contact-item">
+        <p class="contact-label">LinkedIn</p>
+        <p><a href="{{ .Site.Params.linkedin }}" rel="noopener" target="_blank">moh-ferian-fakhrul-zain</a></p>
+      </div>
+      <div class="contact-item">
+        <p class="contact-label">GitHub</p>
+        <p><a href="{{ .Site.Params.github }}" rel="noopener" target="_blank">@rianovski</a></p>
+      </div>
+      <div class="contact-item">
+        <p class="contact-label">Location</p>
+        <p>{{ .Site.Params.location }}</p>
+      </div>
+      <div class="contact-item">
+        <p class="contact-label">Phone / WhatsApp</p>
+        <p><a href="tel:{{ .Site.Params.phone | replaceRE "[^+0-9]" "" }}">{{ .Site.Params.phone }}</a></p>
+      </div>
+      <div class="contact-item">
+        <p class="contact-label">CV</p>
+        <p><a href="{{ .Site.Params.cvFile }}" download>Download PDF →</a></p>
+      </div>
+    </div>
+
+    {{- if .Content }}
+    <div class="prose" style="margin-top: var(--s-7);">{{ .Content }}</div>
+    {{- end }}
+  </div>
+</section>
+{{ end }}

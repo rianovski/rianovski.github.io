@@ -1,0 +1,73 @@
+{{ define "main" }}
+{{ partial "hero.html" . }}
+
+<section class="section" id="about">
+  <div class="container">
+    <header class="section-head">
+      <p class="section-eyebrow">About</p>
+      <h2 class="section-title">DevSecOps for teams that can't afford to slow down — or get breached.</h2>
+    </header>
+    <div class="prose">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--bg-soft); border-block: 1px solid var(--border);">
+  <div class="container">
+    <header class="section-head">
+      <p class="section-eyebrow">Highlights</p>
+      <h2 class="section-title">What I've shipped</h2>
+    </header>
+    <div class="card-grid">
+      <article class="card">
+        <h3>Infrastructure as Code</h3>
+        <p class="card-meta">Ansible · Terraform · GitOps</p>
+        <p>Cut environment build time from 1 hour to 10 minutes with reusable IaC pipelines.</p>
+      </article>
+      <article class="card">
+        <h3>Container Security</h3>
+        <p class="card-meta">Docker · Kubernetes · Image signing</p>
+        <p>Established vulnerability scanning, image signing, and runtime protection baselines.</p>
+      </article>
+      <article class="card">
+        <h3>Cloud Cost &amp; Reliability</h3>
+        <p class="card-meta">Azure · GCP · OpenStack</p>
+        <p>Reduced cloud spend 20% and drove production incidents down from 100% to 40%.</p>
+      </article>
+      <article class="card">
+        <h3>Security Governance</h3>
+        <p class="card-meta">ISO 27001 · Pentesting · Incident response</p>
+        <p>Security assessments, SOPs, and incident response plans — plus ISO 27001:2022 Security Awareness Survey Winner.</p>
+      </article>
+    </div>
+    <div style="margin-top: var(--s-6); display: flex; gap: var(--s-3); flex-wrap: wrap;">
+      <a class="btn btn-primary" href="/experience/">See full experience →</a>
+      <a class="btn btn-ghost" href="/skills/">Skills matrix</a>
+      <a class="btn btn-ghost" href="/projects/">Case studies</a>
+    </div>
+  </div>
+</section>
+
+{{- $posts := where .Site.RegularPages "Section" "posts" -}}
+{{- if $posts }}
+<section class="section">
+  <div class="container">
+    <header class="section-head">
+      <p class="section-eyebrow">Writing</p>
+      <h2 class="section-title">Recent posts</h2>
+    </header>
+    <div class="card-grid">
+      {{- range first 3 $posts }}
+      <article class="card">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p class="card-meta">{{ .Date.Format "Jan 2, 2006" }}</p>
+        <p>{{ .Description | default (.Summary | plainify | truncate 160) }}</p>
+      </article>
+      {{- end }}
+    </div>
+    <p style="margin-top: var(--s-5);"><a href="/posts/">All posts →</a></p>
+  </div>
+</section>
+{{- end }}
+{{ end }}

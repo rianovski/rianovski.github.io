@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-name">{{ .Site.Params.author }}</p>
+      <p class="footer-meta">DevSecOps Engineer · {{ .Site.Params.location }}</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="mailto:{{ .Site.Params.email }}">Email</a></li>
+      <li><a href="{{ .Site.Params.github }}" rel="noopener" target="_blank">GitHub</a></li>
+      <li><a href="{{ .Site.Params.linkedin }}" rel="noopener" target="_blank">LinkedIn</a></li>
+      <li><a href="{{ .Site.Params.cvFile }}" download>CV (PDF)</a></li>
+    </ul>
+    <p class="footer-copy">© {{ now.Year }} {{ .Site.Params.author }} · Built with Hugo</p>
+  </div>
+</footer>

@@ -1,0 +1,23 @@
+{{- /* Expects a dict: role, company, period, current, summary, bullets (slice), metrics (slice of dicts {num,label}) */ -}}
+<article class="exp-card{{ if .current }} is-current{{ end }}">
+  <header class="exp-head">
+    <div>
+      <h3 class="exp-role">{{ .role }}</h3>
+      <p class="exp-company">{{ .company }}</p>
+    </div>
+    <p class="exp-period">{{ .period }}{{ if .current }} · <span class="badge">Current</span>{{ end }}</p>
+  </header>
+  {{- with .summary }}<p class="exp-summary">{{ . }}</p>{{ end }}
+  {{- with .bullets }}
+  <ul class="exp-bullets">
+    {{- range . }}<li>{{ . | safeHTML }}</li>{{ end }}
+  </ul>
+  {{- end }}
+  {{- with .metrics }}
+  <ul class="exp-metrics">
+    {{- range . }}
+    <li><span class="metric-num">{{ .num }}</span><span class="metric-label">{{ .label }}</span></li>
+    {{- end }}
+  </ul>
+  {{- end }}
+</article>

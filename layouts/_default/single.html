@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="section">
+  <div class="container">
+    <header class="section-head">
+      {{- with .Params.eyebrow }}<p class="section-eyebrow">{{ . }}</p>{{ end }}
+      <h1>{{ .Title }}</h1>
+      {{- with .Description }}<p class="text-muted">{{ . }}</p>{{ end }}
+      {{- if and .IsPage (ne .Section "") (not .Date.IsZero) }}
+      <p class="card-meta">{{ .Date.Format "Jan 2, 2006" }}{{ with .Params.tags }} · {{ delimit . ", " }}{{ end }}</p>
+      {{- end }}
+    </header>
+    <div class="prose">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{ end }}

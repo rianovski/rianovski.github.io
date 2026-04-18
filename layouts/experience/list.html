@@ -1,0 +1,110 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <header class="section-head">
+      <p class="section-eyebrow">Experience</p>
+      <h1 class="section-title">Five years of DevSecOps &amp; DevOps</h1>
+      <p class="text-muted">From startup DevOps to enterprise DevSecOps — here's where I've been and what I've shipped.</p>
+    </header>
+
+    {{- if .Content }}<div class="prose">{{ .Content }}</div>{{ end }}
+
+    <div class="exp-list" style="margin-top: var(--s-6);">
+
+      {{ partial "experience-card.html" (dict
+        "role" "DevSecOps Engineer"
+        "company" "PT Astra International Tbk"
+        "period" "Jan 2023 — Present"
+        "current" true
+        "summary" "Embedding security into Astra's SDLC. Owning DevSecOps tooling, container security, secrets management, and incident response across Azure DevOps and Azure workloads."
+        "bullets" (slice
+          "Collaborate with dev teams on DevSecOps best practices and secure coding reviews"
+          "Infrastructure automation with Ansible across Azure and on-prem"
+          "Design secrets management and encryption strategies for sensitive production data"
+          "Drive container security: vulnerability scanning, image signing, runtime protection"
+          "Author security SOPs, guidelines, and incident response playbooks"
+          "Conduct security assessments, penetration testing, and vulnerability scanning"
+          "Implement log aggregation and Grafana-based monitoring"
+          "PowerShell automation for operational tasks"
+          "Technology Architect for Application Quality Scoring initiative"
+        )
+        "metrics" (slice
+          (dict "num" "20%" "label" "cloud cost ↓")
+          (dict "num" "60%" "label" "prod issues ↓ (100% → 40%)")
+          (dict "num" "1h → 10m" "label" "IaC env build time")
+          (dict "num" "ISO 27001:2022" "label" "Security Awareness Winner")
+        )
+      ) }}
+
+      {{ partial "experience-card.html" (dict
+        "role" "DevOps Engineer"
+        "company" "PT Anabatic Technologies Tbk"
+        "period" "Jun 2022 — Dec 2022"
+        "current" false
+        "summary" "Kubernetes platform work and CI/CD pipeline development for enterprise clients."
+        "bullets" (slice
+          "Configured and managed Kubernetes clusters"
+          "Automated server provisioning and configuration management"
+          "Developed CI/CD pipelines end-to-end"
+          "Implemented container-based infrastructure patterns"
+          "Centralized logging and monitoring"
+          "Performance analysis and optimization of existing workloads"
+        )
+        "metrics" (slice
+          (dict "num" "5%" "label" "infra cost ↓")
+          (dict "num" "1h → 10m" "label" "deploy time")
+        )
+      ) }}
+
+      {{ partial "experience-card.html" (dict
+        "role" "IT Operations Support"
+        "company" "PLN Icon Plus"
+        "period" "Jul 2021 — Jun 2022"
+        "current" false
+        "summary" "Keeping production application services reliable for a national utility infrastructure provider."
+        "bullets" (slice
+          "Managed application system service performance and reliability"
+          "System configuration and monitoring"
+          "Database management, backup, and recovery"
+          "System troubleshooting and maintenance"
+          "Technical support and user guidance"
+          "Implemented IT helpdesk systems"
+        )
+        "metrics" (slice
+          (dict "num" "5%" "label" "response time ↑")
+        )
+      ) }}
+
+      {{ partial "experience-card.html" (dict
+        "role" "DevOps Engineer"
+        "company" "Purify Technology"
+        "period" "Jan 2020 — Jun 2021"
+        "current" false
+        "summary" "Full-stack DevOps for Vue/Laravel web products — cloud environments, Kubernetes, and CI/CD."
+        "bullets" (slice
+          "Built and managed cloud server environments for Vue-based websites"
+          "Developed full-stack web applications using Vue and Laravel"
+          "Configured and managed Kubernetes clusters"
+          "Automated server provisioning"
+          "Designed CI/CD pipelines"
+        )
+      ) }}
+
+    </div>
+
+    <div style="margin-top: var(--s-7);">
+      <h2>Education</h2>
+      <article class="exp-card">
+        <header class="exp-head">
+          <div>
+            <h3 class="exp-role">Bachelor of Computer Science — Information Systems</h3>
+            <p class="exp-company">Institut Teknologi Sepuluh Nopember (ITS)</p>
+          </div>
+          <p class="exp-period">Graduated Dec 2021</p>
+        </header>
+      </article>
+    </div>
+
+  </div>
+</section>
+{{ end }}

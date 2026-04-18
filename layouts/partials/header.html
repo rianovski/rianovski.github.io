@@ -1,0 +1,19 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ "/" | relURL }}">
+      <span class="brand-mark">◆</span>
+      <span class="brand-name">Ferian</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        {{- range .Site.Menus.main }}
+        <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+    <button type="button" class="theme-toggle" aria-label="Toggle color theme" data-theme-toggle>
+      <span class="icon-sun" aria-hidden="true">☀</span>
+      <span class="icon-moon" aria-hidden="true">☾</span>
+    </button>
+  </div>
+</header>

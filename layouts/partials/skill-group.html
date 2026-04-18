@@ -1,0 +1,9 @@
+{{- /* Expects dict: title, items (slice) */ -}}
+<div class="skill-group">
+  <h3 class="skill-title">{{ .title }}</h3>
+  <ul class="skill-list">
+    {{- range .items }}
+    <li class="skill-pill">{{ . }}</li>
+    {{- end }}
+  </ul>
+</div>

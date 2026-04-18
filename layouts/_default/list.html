@@ -1,0 +1,30 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <header class="section-head">
+      <p class="section-eyebrow">{{ .Title }}</p>
+      <h1 class="section-title">{{ with .Params.heading }}{{ . }}{{ else }}{{ .Title }}{{ end }}</h1>
+      {{- with .Description }}<p class="text-muted">{{ . }}</p>{{ end }}
+    </header>
+
+    {{- if .Content }}
+    <div class="prose">{{ .Content }}</div>
+    {{- end }}
+
+    {{- $pages := .RegularPages -}}
+    {{- if $pages }}
+    <div class="card-grid" style="margin-top: var(--s-6);">
+      {{- range $pages }}
+      <article class="card">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{- if not .Date.IsZero }}
+        <p class="card-meta">{{ .Date.Format "Jan 2, 2006" }}{{ with .Params.tags }} · {{ delimit . ", " }}{{ end }}</p>
+        {{- end }}
+        <p>{{ .Description | default (.Summary | plainify | truncate 160) }}</p>
+      </article>
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+</section>
+{{ end }}

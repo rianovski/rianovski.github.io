@@ -1,0 +1,63 @@
+baseURL = "https://rianovski.github.io/"
+languageCode = "en-us"
+title = "Moh. Ferian Fakhrul Zain — DevSecOps Engineer"
+enableRobotsTXT = true
+enableEmoji = false
+
+[params]
+  author = "Moh. Ferian Fakhrul Zain"
+  description = "DevSecOps Engineer with 5+ years of experience in secure coding, infrastructure automation, and cloud management."
+  email = "mferianfakhrulzain@gmail.com"
+  phone = "+62 82141600254"
+  location = "Jakarta, ID"
+  github = "https://github.com/rianovski"
+  linkedin = "https://id.linkedin.com/in/moh-ferian-fakhrul-zain"
+  cvFile = "/cv/ferian-cv.pdf"
+  accentColor = "#0ea5e9"
+
+[menu]
+  [[menu.main]]
+    name = "About"
+    url = "/#about"
+    weight = 10
+  [[menu.main]]
+    name = "Experience"
+    url = "/experience/"
+    weight = 20
+  [[menu.main]]
+    name = "Skills"
+    url = "/skills/"
+    weight = 30
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 40
+  [[menu.main]]
+    name = "Achievements"
+    url = "/achievements/"
+    weight = 50
+  [[menu.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 60
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 70
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    style = "github-dark"
+    noClasses = false
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[taxonomies]
+  tag = "tags"
+
+[build]
+  writeStats = false

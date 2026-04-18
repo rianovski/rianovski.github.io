@@ -1,0 +1,48 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <header class="section-head">
+      <p class="section-eyebrow">Skills</p>
+      <h1 class="section-title">Tools I reach for</h1>
+      <p class="text-muted">A working map of what I use day-to-day, grouped by concern.</p>
+    </header>
+
+    {{- if .Content }}<div class="prose">{{ .Content }}</div>{{ end }}
+
+    <div class="skills-grid" style="margin-top: var(--s-6);">
+      {{ partial "skill-group.html" (dict
+        "title" "Infrastructure &amp; IaC"
+        "items" (slice "Ansible" "Terraform" "GitOps" "IaC patterns")
+      ) }}
+      {{ partial "skill-group.html" (dict
+        "title" "Containers &amp; Orchestration"
+        "items" (slice "Docker" "Kubernetes" "Container security" "Image signing" "Vulnerability scanning")
+      ) }}
+      {{ partial "skill-group.html" (dict
+        "title" "Cloud Platforms"
+        "items" (slice "Microsoft Azure" "Azure DevOps" "Google Cloud Platform" "OpenStack")
+      ) }}
+      {{ partial "skill-group.html" (dict
+        "title" "Security"
+        "items" (slice "Secure coding review" "Secrets management" "Encryption" "Pentesting" "Vulnerability scanning" "Incident response" "ISO 27001:2022")
+      ) }}
+      {{ partial "skill-group.html" (dict
+        "title" "Automation &amp; SRE"
+        "items" (slice "CI/CD" "PowerShell" "Shell scripting" "Site Reliability Engineering")
+      ) }}
+      {{ partial "skill-group.html" (dict
+        "title" "Observability"
+        "items" (slice "Grafana" "Log aggregation" "Monitoring" "Alerting")
+      ) }}
+      {{ partial "skill-group.html" (dict
+        "title" "OS / Web / DB"
+        "items" (slice "Ubuntu / Linux administration" "Nginx" "PostgreSQL")
+      ) }}
+      {{ partial "skill-group.html" (dict
+        "title" "Web stack (early career)"
+        "items" (slice "Vue.js" "Laravel" "PHP")
+      ) }}
+    </div>
+  </div>
+</section>
+{{ end }}
